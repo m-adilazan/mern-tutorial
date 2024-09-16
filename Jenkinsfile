@@ -11,33 +11,32 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 // Ensure the environment has Node.js
-                dir("mern-tutorial") {
+                
                     sh '''
-                    npm install
+                    /var/jenkins_home/workspace/Node JS Pipeline/mern-tutorial/npm install
                     '''
-                }
             }
         }
 
         stage('Run Tests') {
             steps {
                 // Run tests
-                dir("mern-tutorial") {
+                
                     sh '''
-                    npm test
+                    /var/jenkins_home/workspace/Node JS Pipeline/mern-tutorial/npm test
                     '''
-                }
+                
             }
         }
 
         stage('Build') {
             steps {
                 // Build the application
-                dir("mern-tutorial") {
+                
                     sh '''
-                    npm run build
+                    /var/jenkins_home/workspace/Node JS Pipeline/mern-tutorial/npm run build
                     '''
-                }
+                
             }
         }
 
