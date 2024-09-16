@@ -29,7 +29,8 @@ pipeline {
                 // Build the application
                 
                     sh '''
-                    npm run server
+                    cd frontend
+                    npm run build
                     '''
                 
             }
