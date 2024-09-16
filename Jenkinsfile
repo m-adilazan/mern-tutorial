@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Pull the code from your repository
-                git 'https://github.com/your-repo/node-app.git'
+                git 'https://github.com/m-adilazan/mern-tutorial.git'
             }
         }
 
