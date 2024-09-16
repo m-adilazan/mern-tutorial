@@ -11,27 +11,33 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 // Ensure the environment has Node.js
-                sh '''
-                npm install
-                '''
+                dir("mern-tutorial") {
+                    sh '''
+                    npm install
+                    '''
+                }
             }
         }
 
         stage('Run Tests') {
             steps {
                 // Run tests
-                sh '''
-                npm test
-                '''
+                dir("mern-tutorial") {
+                    sh '''
+                    npm test
+                    '''
+                }
             }
         }
 
         stage('Build') {
             steps {
                 // Build the application
-                sh '''
-                npm run build
-                '''
+                dir("mern-tutorial") {
+                    sh '''
+                    npm run build
+                    '''
+                }
             }
         }
 
