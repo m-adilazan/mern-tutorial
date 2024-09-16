@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        PATH = "/var/jenkins_home/.local/state/fnm_multishells/3385_1726483073533/bin/node:$PATH"  // Use the path obtained from `which node` and `which npm`
+    }
+    
     stages {
         stage('Checkout') {
             steps {
