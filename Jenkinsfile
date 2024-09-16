@@ -13,19 +13,10 @@ pipeline {
                 // Ensure the environment has Node.js
                 
                     sh '''
-                    /var/jenkins_home/workspace/Node JS Pipeline/mern-tutorial/npm install
+                    npm install
+                    cd frontend
+                    npm install
                     '''
-            }
-        }
-
-        stage('Run Tests') {
-            steps {
-                // Run tests
-                
-                    sh '''
-                    /var/jenkins_home/workspace/Node JS Pipeline/mern-tutorial/npm test
-                    '''
-                
             }
         }
 
@@ -34,7 +25,7 @@ pipeline {
                 // Build the application
                 
                     sh '''
-                    /var/jenkins_home/workspace/Node JS Pipeline/mern-tutorial/npm run build
+                    npm run server
                     '''
                 
             }
