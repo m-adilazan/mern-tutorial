@@ -29,7 +29,7 @@ pipeline {
                 // Build the application
                 
                     sh '''
-                    npm run server
+                    npm run build
                     '''
                 
             }
