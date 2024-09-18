@@ -40,6 +40,9 @@ pipeline {
             steps {
                 sshagent(['9fc950f1-b26c-45a3-8198-ab80799c59d8']) {
                     sh '''
+                    mkdir -p ~/.ssh
+                    echo "Host *" >> ~/.ssh/config
+                    echo "    StrictHostKeyChecking no" >> ~/.ssh/config
                     scp -r * VMSYS@98.70.11.5:/home/VMSYS
                     ssh VMSYS@98.70.11.5 "cd /home/VMSYS && npm install && pm2 restart all"
                     '''
