@@ -43,6 +43,7 @@ pipeline {
                     mkdir -p ~/.ssh
                     echo "Host *" >> ~/.ssh/config
                     echo "    StrictHostKeyChecking no" >> ~/.ssh/config
+                    chmod 600 ~/.ssh/config
                     scp -r * VMSYS@98.70.11.5:/home/VMSYS
                     ssh VMSYS@98.70.11.5 "cd /home/VMSYS && npm install && pm2 restart all"
                     '''
