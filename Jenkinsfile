@@ -38,7 +38,7 @@ pipeline {
 
         stage('Deploy to Remote Server') {
             steps {
-                sshagent(['adm-m-adilazan@4.247.131.4']) {
+                sshagent(['adm-m-adilazan']) {
                     sh '''
                     scp -r * VMSYS@98.70.11.5:/home/VMSYS
                     ssh VMSYS@98.70.11.5 "cd /home/VMSYS && npm install && pm2 restart all"
